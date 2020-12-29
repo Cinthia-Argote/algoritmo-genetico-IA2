@@ -4,60 +4,38 @@ var i,j;
 var sumaTotal = 0;
 var fitnessAcumulado = 0;
 var datosGeneraciones = [];
+var indice=0;
 
 //Variables iniciales
-// Cruzamiento
 var pc = 0.70;
 var genes = 30;
-// Mutacion
 var pm = 0.0555;
 var poblacionInicial = 50;
 var generaciones = 30;
-
-
-// variables animals
-
-var poblacionBeagle = [];
-var poblacionBulldog = [];
-var poblacionCaniche = [];
-var poblacionGolden = [];
-var poblacionLabrador = [];
-var poblacionPastor = [];
 
 $(document).ready(function(){
     $('form').submit(function(){
         return false;
     });
     $('#activa-evo').on('click', evoluciona);
-
-    $('#generar-beagle').on('click', function() {
-        console.log('<----- Generar Beagle ----->');
-    });
-    $('#generar-bulldog').on('click', function() {
-        console.log('<----- Generar Bulldog ----->');
-    });
-    $('#generar-caniche').on('click', function() {
-        console.log('<----- Generar Caniche ----->');
-    });
-    $('#generar-golden').on('click', function() {
-        console.log('<----- Generar Golden ----->');
-    });
-    $('#generar-labrador').on('click', function() {
-        console.log('<----- Generar Labrador ----->');
-    });
-    $('#generar-pastor').on('click', function() {
-        console.log('<----- Generar Pastor ----->');
-    });
+    $('#generar-black').on('click', dark);
+    $('#generar-shasha').on('click',shasha);
+    $('#generar-cacuchin').on('click', cachuchin);
+    $('#generar-hachi').on('click', hachi);
+    $('#generar-toto').on('click', toto);
+    $('#generar-frida').on('click', frida);
+    $('#generar-neron').on('click',neron);
+    $('#generar-susy').on('click', susy);
+    $('#generar-peky').on('click', peky);
+    $('#generar-doberman').on('click', bruno);
+    $('#generar-chow').on('click', chowchow);
+    $('#generar-dachshund').on('click', arya);
+    
 });
 
 /*Funcion que genera el algoritmo genetico*/
 function evoluciona(){
     $('.loading').removeClass('hide');
-    poblacionInicial 	= $('#poblacion').val();
-    pc 					= $('#cruzamiento').val();
-    pm 					= $('#mutacion').val();
-    generaciones 		= $('#generaciones').val();
-    iniciaPoblacion();
     evaluaPoblacion();
     datosGeneraciones 	= [];
     console.table(poblacionAlInicio);
@@ -83,24 +61,186 @@ function evoluciona(){
     graficaPastel('#genoma-final', poblacion, 'Distribución al final');
 }
 
-/*Funcion carga una población inicial para evolucionar*/
-function iniciaPoblacion(){
-    console.log('--- Poblacion Inicial ---');
-    poblacion = [];
-    for(i=0;i<poblacionInicial;i++){
-        var objetoInicial = {
-            cromosomaArray:[]
-        };
-        objetoInicial.cromosomaindice = i;
-        for(j=0;j<genes;j++){
-            var aleatorio = numeroAleatorio();
-            objetoInicial.cromosomaArray.push(aleatorio);
-        }
-        poblacion.push(objetoInicial);
-    }
-    poblacionAlInicio = poblacion; //Guarda la poblacion al inicio para comparar.
-    console.log(poblacion);
+function dark(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("NEGRO",objetoInicial);
+    objetoInicial=colorOjos("CAFE",objetoInicial);
+    objetoInicial=orejas("NORMALES",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("GRANDE",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
 }
+
+function shasha(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("BLANCO",objetoInicial);
+    objetoInicial=colorOjos("CAFE",objetoInicial);
+    objetoInicial=orejas("PUNTEAGUDAS",objetoInicial);
+    objetoInicial=pelo("RIZADO",objetoInicial);
+    objetoInicial=cuerpo("PEQUENO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function cachuchin(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("BLANCO",objetoInicial);
+    objetoInicial=colorOjos("AZUL CLARO",objetoInicial);
+    objetoInicial=orejas("CAIDAS",objetoInicial);
+    objetoInicial=pelo("RIZADO",objetoInicial);
+    objetoInicial=cuerpo("PEQUENO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function hachi(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("NEGRO",objetoInicial);
+    objetoInicial=colorOjos("MARRON",objetoInicial);
+    objetoInicial=orejas("NORMALES",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("MEDIANO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function toto(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("NEGRO",objetoInicial);
+    objetoInicial=colorOjos("MARRON",objetoInicial);
+    objetoInicial=orejas("PUNTEAGUDAS",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("MEDIANO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function frida(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("CAFE CLARO",objetoInicial);
+    objetoInicial=colorOjos("OSCUROS",objetoInicial);
+    objetoInicial=orejas("PUNTEAGUDAS",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("MEDIANO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function neron(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("CAFE CLARO",objetoInicial);
+    objetoInicial=colorOjos("OSCUROS",objetoInicial);
+    objetoInicial=orejas("CAIDAS",objetoInicial);
+    objetoInicial=pelo("RIZADO",objetoInicial);
+    objetoInicial=cuerpo("PEQUENO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function susy(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("CAFE CLARO",objetoInicial);
+    objetoInicial=colorOjos("OSCUROS",objetoInicial);
+    objetoInicial=orejas("NORMALES",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("MEDIANO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function peky(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("NEGRO",objetoInicial);
+    objetoInicial=colorOjos("CAFE",objetoInicial);
+    objetoInicial=orejas("CAIDAS",objetoInicial);
+    objetoInicial=pelo("RIZADO",objetoInicial);
+    objetoInicial=cuerpo("MEDIANO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function bruno(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("NEGRO",objetoInicial);
+    objetoInicial=colorOjos("CAFE",objetoInicial);
+    objetoInicial=orejas("PUNNTEAGUDAS",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("GRANDE",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function chowchow(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("CAFE CLARO",objetoInicial);
+    objetoInicial=colorOjos("OSCURO",objetoInicial);
+    objetoInicial=orejas("PUNTEAGUDAS",objetoInicial);
+    objetoInicial=pelo("ESPONJOSO",objetoInicial);
+    objetoInicial=cuerpo("GRANDE",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
+function arya(){
+    var objetoInicial={
+        cromosomaArray:[]
+    };
+    objetoInicial.cromosomaindice=indice;
+    objetoInicial=colorPelo("CAFE OSCURO",objetoInicial);
+    objetoInicial=colorOjos("CAFE",objetoInicial);
+    objetoInicial=orejas("CAIDAS",objetoInicial);
+    objetoInicial=pelo("LASIO",objetoInicial);
+    objetoInicial=cuerpo("PEQUENO",objetoInicial);
+    poblacion.push(objetoInicial);
+    poblacionAlInicio=poblacion;
+    indice++;
+}
+
 /*Evalua la población asignado su calificacion(Fitness)*/
 function evaluaPoblacion(){
     console.log('--- Evalua Poblacion ---');
@@ -288,4 +428,229 @@ function sustituyePoblacion(nuevos){
 function numeroAleatorio(){
     var numero = Math.round(Math.random());
     return numero;
+}
+
+function colorOjos(color,objetoInicial){
+    switch(color){
+        case "MARRON": 
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "CAFE":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "AZUL CLARO":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "OSCURO":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        default:
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+    }
+    return objetoInicial;
+}
+
+function orejas(orejas,objetoInicial){
+    switch(orejas){
+        case "NORMALES": 
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        case "PUNTEAGUDAS":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "PARADAS":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "CAIDAS":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        default:
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+    }
+    return objetoInicial;
+}
+
+
+function pelo(pelo,objetoInicial){
+    switch(pelo){
+        case "ESPONJOSO": 
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        case "LASIO":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        case "RIZADO":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        default:
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+    }
+    return objetoInicial;
+}
+
+
+function cuerpo(cuerpo,objetoInicial){
+    switch(cuerpo){
+        case "GRANDE": 
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "MEDIANO":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        case "PEQUENO":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        default:
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+    }
+    return objetoInicial;
+}
+
+
+function colorPelo(color,objetoInicial){
+    switch(color){
+        case "NEGRO": 
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        case "BLANCO":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "MOSTAZA":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        case "CAFE CLARO":
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+        case "CAFE OSCURO":
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(1);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(1);
+        break;
+        default:
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+            objetoInicial.cromosomaArray.push(0);
+        break;
+    }
+    return objetoInicial;
 }
